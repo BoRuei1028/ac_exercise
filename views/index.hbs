@@ -1,1 +1,63 @@
-<h1>Thank you</h1>
+<div class="container search-bar">
+  <div class="search-bar-outer">
+    <div class="search-bar-inner">
+      <form action="/search">
+        <h4 class="mb-2">尋找餐廳：</h4>
+        <div class="input-group">
+          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
+            value="{{keyword}}" aria-describedby="search-button">
+
+          <div class="input-group-append">
+            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="mx-2">
+            <a href="/restaurants/new" class="btn btn-warning">
+              新增餐廳
+            </a>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{{#if resultCount}}
+<div class="alert alert-danger mt-3 text-center search-alert" role="alert">
+  <span>共有 {{resultCount}} 筆結果</span>
+</div>
+{{/if}}
+
+<!-- restaurant list 動態產生-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10 col-12 mx-auto">
+      <div class="row row-cols-sm-3">
+        {{#each restaurantData}}
+        <div class="card mb-2">
+          <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+          <div class="card-body p-3">
+            <h6 class="card-title mb-1">{{this.name}}</h6>
+
+            <div class="restaurant-category mb-1">
+              <i class="fas fa-utensils pr-2"></i> {{this.category}}
+            </div>
+
+            <span class="badge badge-pill badge-danger font-weight-normal">
+              {{this.rating}}
+              <i class="fas fa-star fa-xs"></i>
+            </span>
+          </div>
+          <div class="card-footer d-flex justify-content-around">
+            <a href="/restaurant/{{ this._id }}/edit" class="btn btn-primary">edit</a>
+            <a href="/restaurant/{{ this._id }}" class="btn btn-success">detail</a>
+            <form action="./todos/{{ this._id }}/delete" method="POST" style="display: inline;">
+              <button type="submit" class="btn btn-danger">delete</button>
+            </form>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
