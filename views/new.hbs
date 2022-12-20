@@ -1,0 +1,57 @@
+
+<div class="container text-center m-3">
+  <h1 class="m-2">新增餐廳</h1>
+  <form action="/restaurant" method="post">
+    <div class="mb-2">
+      <label for="name">餐廳名稱:</label>
+      <input type="text" name="name" placeholder="Alpha蔬食餐廳" required>
+    </div>
+    <div class="mb-2">
+      <label for="name_en">餐廳英文名稱:</label>
+      <input type="text" name="name_en" placeholder="Alpha Vegan Restaurant" required>
+    </div>
+    <div class="mb-2">
+      <label for="category">餐廳類型:</label>
+      <input type="text" name="category" placeholder="蔬食" list="categoryOptions" required>
+      <datalist id="categoryOptions">
+        <option>美式</option>
+        <option>咖啡</option>
+        <option>蔬食</option>
+        <option>日本料理</option>
+        <option>義式餐廳</option>
+      </datalist>
+    </div>
+    <div class="mb-2">
+      <label for="image">圖片連結:</label>
+      <input type="url" name="image" required>
+    </div>
+    <div class="mb-2">
+      <label for="location">餐廳地址:</label>
+      <input type="text" name="location" placeholder="台南市九又四分之一街12號" required>
+    </div>
+    <div class="mb-2">
+      <label for="phone">電話:</label>
+      <input type="text" name="phone" placeholder="06 734 5467" required>
+    </div>
+    <div class="mb-2">
+      <label for="google_map">GOOGLE地圖連結:</label>
+      <input type="url" name="google_map" required>
+    </div>
+    <div class="mb-2">
+      <label for="rating">評分:</label>
+      <input type="number" name="rating" min="0" max="10" step="0.5" required>
+    </div>
+    <div class="mb-2">
+      <label for="description" class="d-flex justify-content-center">記錄:</label>
+      <textarea type="text" name="description" row="2" required></textarea>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">新增餐廳</button>
+      <button type="reset" class="btn btn-secondary">重新輸入</button>
+      <a href="/">
+        <button type="button" class="btn btn-info">返回首頁</button>
+      </a>
+    </div>
+
+  </form>
+</div>
