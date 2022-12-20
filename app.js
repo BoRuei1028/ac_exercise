@@ -46,13 +46,14 @@ app.get('/restaurant/:restaurant_id', (req, res) => {
     .then(item => res.render('detail', { item }))
     .catch(error => console.log(error))
 })
+// 修改特定資料
 app.get('/restaurant/:restaurant_id/edit', (req, res) => {
   return Restaurant.findById(req.params.restaurant_id)
     .lean()
     .then((restaurantDataById) => res.render('edit', { item: restaurantDataById }))
     .catch(error => console.log(error))
 })
-// 新增餐廳to資料庫
+
 app.post('/restaurant', (req, res) => {
   const restaurantData = req.body
   Restaurant.create(restaurantData)
@@ -66,4 +67,10 @@ app.post('/restaurant/:restaurant_id/edit', (req, res) => {
     .then(() => res.redirect(`/restaurant/${id}`))
     .catch(error => console.log(error))
 })
+app.post('/restaurant/:restaurant_id/delete', (req, res) => {
+  return Restaurant.findByIdAndDelete(req.params.restaurant_id, req.body)
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 app.listen(3000)
