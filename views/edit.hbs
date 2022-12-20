@@ -1,46 +1,48 @@
 <div class="container text-center m-3">
   <h1 class="m-2">修改餐廳資料</h1>
   <form action="/restaurant/{{ item._id }}/edit" method="post">
-    <div class="mb-2">
+    <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="name">餐廳名稱:</label>
-      <input type="text" name="name" placeholder="Alpha蔬食餐廳" required value="{{ item.name }}">
+      <input type="text" name="name" placeholder="Alpha蔬食餐廳" required value="{{ item.name }}" class="col-3">
     </div>
-    <div class="mb-2">
+    <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="name_en">餐廳英文名稱:</label>
-      <input type="text" name="name_en" placeholder="Alpha Vegan Restaurant" required value="{{ item.name_en }}">
+      <input type="text" name="name_en" placeholder="Alpha Vegan Restaurant" required value="{{ item.name_en }}"
+        class="col-3">
     </div>
-    <div class="mb-2">
+    <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="category">餐廳類型:</label>
-      <input type="text" name="category" placeholder="蔬食" list="categoryOptions" required value="{{ item.category }}">
+      <input type="text" name="category" placeholder="蔬食" list="categoryOptions" required value="{{ item.category }}"
+        class="col-3">
       <datalist id="categoryOptions">
-        <option>美式</option>
-        <option>咖啡</option>
-        <option>蔬食</option>
+        <option>美式料理</option>
+        <option>咖啡簡餐</option>
+        <option>蔬食料理</option>
         <option>日本料理</option>
         <option>義式餐廳</option>
       </datalist>
     </div>
-    <div class="mb-2">
+    <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="image">圖片連結:</label>
-      <input type="url" name="image" required value="{{ item.image }}">
+      <input type="url" name="image" required value="{{ item.image }}" class="col-3">
     </div>
-    <div class="mb-2">
+    <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="location">餐廳地址:</label>
-      <input type="text" name="location" placeholder="台南市九又四分之一街12號" required value="{{ item.location }}">
+      <input type="text" name="location" placeholder="台南市九又四分之一街12號" required value="{{ item.location }}" class="col-3">
     </div>
-    <div class="mb-2">
+    <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="phone">電話:</label>
-      <input type="text" name="phone" placeholder="06 734 5467" required value="{{ item.phone }}">
+      <input type="text" name="phone" placeholder="06 734 5467" required value="{{ item.phone }}" class="col-3">
     </div>
-    <div class="mb-2">
+    <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="google_map">GOOGLE地圖連結:</label>
-      <input type="url" name="google_map" required value="{{ item.google_map }}">
+      <input type="url" name="google_map" required value="{{ item.google_map }}" class="col-3">
     </div>
-    <div class="mb-2">
+    <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="rating">評分:</label>
-      <input type="number" name="rating" min="0" max="10" step="0.5" required value="{{ item.rating }}">
+      <input type="number" name="rating" min="0" max="5" step="0.1" required value="{{ item.rating }}" class="col-3">
     </div>
-    <div class="mb-2">
+    <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="description" class="d-flex justify-content-center">記錄:</label>
       <textarea type="text" name="description" row="3" required>{{ item.description }}</textarea>
     </div>
