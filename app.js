@@ -41,18 +41,29 @@ app.get('/restaurant/new', (req, res) => {
 
 // 瀏覽特定餐廳
 app.get('/restaurant/:restaurant_id', (req, res) => {
-  const id = req.params.restaurant_id
-  return Restaurant.findById(id)
+  return Restaurant.findById(req.params.restaurant_id)
     .lean()
     .then(item => res.render('detail', { item }))
     .catch(error => console.log(error))
 })
-
+app.get('/restaurant/:restaurant_id/edit', (req, res) => {
+  return Restaurant.findById(req.params.restaurant_id)
+    .lean()
+    .then((restaurantDataById) => res.render('edit', { item: restaurantDataById }))
+    .catch(error => console.log(error))
+})
 // 新增餐廳to資料庫
 app.post('/restaurant', (req, res) => {
   const restaurantData = req.body
   Restaurant.create(restaurantData)
     .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+app.post('/restaurant/:restaurant_id/edit', (req, res) => {
+  const id = req.params.restaurant_id
+  const updateRestaurantData = req.body
+  return Restaurant.findByIdAndUpdate(req.params.restaurant_id, updateRestaurantData)
+    .then(() => res.redirect(`/restaurant/${id}`))
     .catch(error => console.log(error))
 })
 app.listen(3000)
