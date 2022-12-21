@@ -21,24 +21,20 @@
 ### Installing 安裝
 1. 下載專案至本地端
 ```
-git clone https://github.com/BoRuei1028/ac_exercise.git
+git clone https://github.com/BoRuei1028/restaurant_list.git
 ```
-2. 選擇餐廳清單資料夾
-```
-cd restaurant_list_v2
-```
-3. 安裝nodemon 
+2. 安裝nodemon 
 ```
 npm install -g nodemon
 ```
-4. 新增種子資料
+3. 新增種子資料
 ```
 npm run seed
 ```
-5. 使用nodemon 套件開啟
+4. 使用nodemon 套件開啟
 ```
 npm run dev (執行nodemon app.js)
 ```
-6. 開啟網頁
+5. 開啟網頁
 >  http://localhost:3000
 
