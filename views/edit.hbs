@@ -1,6 +1,6 @@
 <div class="container text-center m-3">
   <h1 class="m-2">修改餐廳資料</h1>
-  <form action="/restaurant/{{ item._id }}/edit" method="post">
+  <form action="/restaurant/{{ item._id }}?_method=PUT" method="POST">
     <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="name">餐廳名稱:</label>
       <input type="text" name="name" placeholder="Alpha蔬食餐廳" required value="{{ item.name }}" class="col-3">
@@ -28,7 +28,7 @@
     </div>
     <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="location">餐廳地址:</label>
-      <input type="text" name="location" placeholder="台南市九又四分之一街12號" required value="{{ item.location }}" class="col-3">
+      <input type="text" name="location" placeholder="台南市xxx街12號" required value="{{ item.location }}" class="col-3">
     </div>
     <div class="mb-2 d-flex flex-column md align-items-center">
       <label for="phone">電話:</label>
