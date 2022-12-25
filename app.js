@@ -22,6 +22,4 @@ app.use(methodOverride("_method"))
 
 app.use(router)
 
-
-
 app.listen(port)

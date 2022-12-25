@@ -30,7 +30,27 @@
 {{/if}}
 
 <!-- restaurant list 動態產生-->
-<div class="container mt-5">
+<div class="container mt-3">
+  {{!-- dropdown --}}
+  <div class="row">
+    <div class="col-md-10 col-12 mx-auto mb-3 d-flex justify-content-end">
+
+      <div class="btn-group">
+        <div type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          排序方式
+        </div>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/">A -> Z(default)</a></li>
+          <li><a class="dropdown-item" href="/desc">Z -> A</a></li>
+          <li><a class="dropdown-item" href="/category">類別</a></li>
+          <li><a class="dropdown-item" href="/rating">評分: 低到高</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="row row-cols-sm-3">
@@ -48,6 +68,7 @@
               {{this.rating}}
               <i class="fas fa-star fa-xs"></i>
             </span>
+
           </div>
           <div class="card-footer d-flex justify-content-end">
             <a href="/restaurant/{{ this._id }}/edit" class="btn btn-primary me-2" title="edit">
