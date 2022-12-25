@@ -10,13 +10,15 @@
 4. 使用者可以新增一家餐廳
 5. 使用者可以刪除一家餐廳
 6. 使用者可以修改餐廳的詳細資訊
+7. 使用者可以使用排序功能
 
 ### Environment 環境建置
 1. Node.js v18.12.1
 2. npm v8.19.2
 3. express v4.17.1
 4. express-handlebars v4.0.2
-5. mongoose": v6.8.0
+5. mongoose: v6.8.0
+6. method override: v3.0.0
 
 ### Installing 安裝
 1. 下載專案至本地端
